@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://img.freepik.com/free-vector/geometric-gradient-futuristic-background_23-2149116406.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin: auto;
+    overflow: hidden;
+    transition: transform 1s ease-in-out;
+    z-index: 1; 
+    inset:inherit;
+}
+
+.wrapper::before {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    border: 2px solid transparent;
+    border-top: 2px solid #00ccff;
+    border-right: 2px solid #d500f9;
+    border-bottom: 2px solid #00ccff;
+    border-left: 2px solid #d500f9;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: -1; 
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 450px) {
+    .wrapper {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: calc(100% - 40px);
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+}
+
+.btn {
+    width: 50%;
+    height: 45px;
+    background-color: azure;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    margin-left: 70px;
+    font-weight: 800;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.input-box input:focus + i {
+    color: limegreen;
+}
+
+.social-platform {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+.social-icon a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin: 15px 16px 0;
+    transition: .3s;
+}
+
+.social-icon a i {
+    color: #fff;
+    font-size: 14px;
+}
+
+.social-icon a:hover {
+    background: #fff;
+}
+
+.social-icon a:hover i {
+    color: black;
+}
+
+.div.active .wrapper.singin {
+    transform: scale(0) translate(-300px, 500px);
+}
+
+.div .wrapper.singup {
+    position: absolute;
+    top: 150px;
+    transform: scale(0) translate(200px, -500px);
+    transition: transform 1s ease-in-out;
+}
+
+.div.active .wrapper.singup {
+    transform: scale(1);
+}
